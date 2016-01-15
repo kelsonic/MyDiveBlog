@@ -1,22 +1,32 @@
-<h1>Listing all articles</h1>
-<p><%= link_to "Create new article", new_article_path %></p>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Country</th>
-    <th>Dive Site</th>
-    <th>Description</th>
-  </tr>
-  
-  <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.country %></td>
-    <td><%= article.divesite %></td>
-    <td><%= article.description %></td>
-    <td><%= link_to "Edit", edit_article_path(article) %></td>
-    <td><%= link_to "Show", article_path(article) %></td>
-    <td><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
-  </tr>
-  <% end %>
-</table>
+<h1 class="text-center">Discover Experiences</h1>
+
+<% @articles.each do |article| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        
+        <div class="article-title text-center">
+          <%= link_to article.title, article_path(article) %>
+        </div>
+        
+        <div class="article-body text-left">
+          <strong>Country: </strong><%= article.country %><br/>
+          <strong>Dive Site(s): </strong><%= article.divesite %>
+        </div>
+        
+        <div class="article-body text-center">
+          <strong>My Experience</strong><br/><%= truncate(article.description, length: 100) %>
+        </div>
+        
+        <!--Action Buttons-->
+        <div class="text-right">
+          <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-warning" %> |
+          <%= link_to "Delete this article", article_path(article), method: :delete, 
+                                              data: { confirm: "Are you sure you want to delete this article?" }, 
+                                              class: "btn btn-xs btn-danger" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>
