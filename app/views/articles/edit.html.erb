@@ -1,0 +1,33 @@
+<h1>Edit an Article</h1>
+
+<% if @article.errors.any? %>
+  <h2>There were a few errors:</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @article do |f| %>
+  <p>
+    <%= f.label :title, "Title" %><br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :country, "Country" %><br/>
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.label :divesite, "Dive Site" %><br/>
+    <%= f.text_field :divesite %>
+  </p>
+  <p>
+    <%= f.label :description, "Description" %><br/>
+    <%= f.text_area :description, rows: 10 %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
