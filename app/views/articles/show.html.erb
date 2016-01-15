@@ -1,13 +1,28 @@
-<h1>Showing selected article.</h1>
+<h2 class="text-center"><%= @article.title %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+  
+  <!--Country-->
+  <h4 class="show-article-h4"><strong>Country:</strong></h4>
+  <%= simple_format(@article.country) %>
+  <hr>
+  
+  <!--Dive Sites-->
+  <h4 class="show-article-h4"><strong>Dive Site(s):</strong></h4>
+  <%= simple_format(@article.divesite) %>
+  <hr>
+  
+  <!--Experience-->
+  <h4 class="show-article-h4"><strong>Experience:</strong></h4>
+  <%= simple_format(@article.description) %>
+  <hr>
+  
+  <!--Action Buttons-->
+  <div>
+    <%= link_to "Back to articles listing", articles_path, class: "btn btn-md btn-primary" %> |
+    <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-md btn-warning" %> |
+    <%= link_to "Delete this article", article_path(@article), method: :delete, 
+                                        data: { confirm: "Are you sure you want to delete this article?" }, 
+                                        class: "btn btn-md btn-danger" %>
+  </div>
+</div>
 
-<p>Title: <%= @article.title %></p>
-
-<p>Country: <%= @article.country %></p>
-
-<p>Dive Site: <%= @article.divesite %></p>
-
-<p>Description: <%= @article.description %></p>
-
-<%= link_to "Edit this article", edit_article_path(@article) %> |
-
-<%= link_to "Back to articles listing", articles_path %>
