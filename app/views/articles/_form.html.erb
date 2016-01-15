@@ -7,25 +7,61 @@
   </ul>
 <% end %>
 
-<%= form_for @article do |f| %>
-  <p>
-    <%= f.label :title, "Title" %><br/>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :country, "Country" %><br/>
-    <%= f.text_field :country %>
-  </p>
-  <p>
-    <%= f.label :divesite, "Dive Site" %><br/>
-    <%= f.text_field :divesite %>
-  </p>
-  <p>
-    <%= f.label :description, "Description" %><br/>
-    <%= f.text_area :description, rows: 10 %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
+<div class="row">
+  <div class="col-xs-12">
+    
+    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    
+      <!--title-->
+      <div class="form-group">
+        <div class="control-label col-sm-2 text-right">
+          <%= f.label :title, "Title" %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+        </div>
+      </div>
+      
+      <!--country-->
+      <div class="form-group">
+        <div class="control-label col-sm-2 text-right">
+          <%= f.label :country, "Country" %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :country, class: "form-control", placeholder: "Country where you dived", autofocus: true %>
+        </div>
+      </div>
+      
+      <!--divesite-->
+      <div class="form-group">
+        <div class="control-label col-sm-2 text-right">
+          <%= f.label :divesite, "Dive Site" %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :divesite, class: "form-control", placeholder: "Name of the dive site", autofocus: true %>
+        </div>
+      </div>
+      
+      <!--description-->
+      <div class="form-group">
+        <div class="control-label col-sm-2 text-right">
+          <%= f.label :description, "Description" %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Write Your Article", autofocus: true %>
+        </div>
+      </div>
+      
+      <!--submit button-->
+      <div class="form-group text-center">
+        <div class="col-sm-8 col-sm-offset-2">
+          <%= f.submit class: 'btn btn-success btn-lg' %>
+        </div>
+      </div>
+      
+    <% end %>
+    <div class="col-sm-4">
+      <%= link_to "Back to Articles Listing", articles_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

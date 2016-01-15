@@ -3,6 +3,10 @@ $navbar-default-bg: #fff;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-color: #eaeaea;
+}
+
 // Logo
 #logo {
   float: left;
@@ -69,4 +73,8 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+.col-sm-10 {
+  margin-bottom: 20px;
 }
