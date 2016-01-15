@@ -3,7 +3,7 @@ $navbar-default-bg: #fff;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// Navbar
+// Logo
 #logo {
   float: left;
   font-size: 1.7em;
@@ -16,4 +16,57 @@ $navbar-default-bg: #fff;
 #logo:hover {
   color: #999;
   text-decoration: none;
+}
+
+#logo_intext {
+  color: #2800a0;
+  font-weight: bold;
+}
+
+// Jumbotron
+.jumbotron {
+  background-image: asset-url('home.jpg');
+  background-size: cover;
+  height: 550px;
+  background-position: center;
+}
+
+.jumbotron h1 {
+  color: #000;
+  margin-top: 10px !important;
+  margin-bottom: 100px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlg {
+  font-size: 1.7em;
+  background-color: black;
+}
+
+// footer
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover {
+  color: #222;
+  text-decoration: none;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
 }
