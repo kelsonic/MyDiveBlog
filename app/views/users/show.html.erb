@@ -8,4 +8,12 @@
 
 <h2 class="col-md-4 col-md-offset-4 text-center well"><%= @user.username %>'s Articles</h2>
 
-<%= render 'articles/article', obj: @user.articles %>
+<div class="text-center">
+  <%= will_paginate @user_articles %>
+</div>
+
+<%= render 'articles/article', obj: @user_articles %>
+
+<div class="text-center">
+  <%= will_paginate @user_articles %>
+</div>

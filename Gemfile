@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use bcrypt for securing passwords
 gem 'bcrypt', '~> 3.1.7'
+# Use will paginate for pagination
+gem 'will_paginate', '3.0.6'
+# Use boostrap-will paginate for pagination styles
+gem 'bootstrap-will_paginate', '0.0.10'
 # Use Bootstrap for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
