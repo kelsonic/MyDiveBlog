@@ -11,7 +11,8 @@
         
         <div class="article-body text-left">
           <strong>Country: </strong><%= article.country %><br/>
-          <strong>Dive Site(s): </strong><%= article.divesite %>
+          <strong>Dive Site(s): </strong><%= article.divesite %><br/>
+          <strong>Created by: </strong><%= article.user.username if article.user %>, <small><%= time_ago_in_words(article.created_at) %> ago, last updated <%= time_ago_in_words(article.updated_at) %> ago</small>
         </div>
         
         <div class="article-body text-center">
