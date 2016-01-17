@@ -1,1 +1,3 @@
+This is Kelson's fourth Rails project!
+
 Welcome to the Explore Rails Blog!
