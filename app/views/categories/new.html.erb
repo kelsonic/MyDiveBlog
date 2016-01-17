@@ -1,0 +1,31 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <h1 class="text-center" id="signup-h1">Create Category</h1>
+</div>
+
+<%= render 'shared/errors', obj: @category %>
+
+<%= form_for(@category, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+  <!--Name-->
+  <div class="form-group">
+    <div class="control-label col-sm-3 text-right">
+      <%= f.label :name, "Name" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.text_field :name, class: "form-control", placeholder: "ie. Altitude Diving", autofocus: true %>
+    </div>
+  </div>
+
+  <br/><br/>
+  
+  <!--Submit Button-->
+  <div class="form-group text-center">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= f.submit "Create", class: 'btn btn-success btn-lg' %>
+    </div>
+  </div>
+  
+<% end %>
+<div class="col-sm-4">
+  <%= link_to "Back to Articles Listing", articles_path, class: "btn btn-primary" %>
+</div>
