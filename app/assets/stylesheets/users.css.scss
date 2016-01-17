@@ -10,3 +10,31 @@
   list-style: none;
   padding-left: 0;
 }
+
+.login {
+  background-color: #5cb85c;
+  border: 1px solid #4cae4c;
+  color: white !important;
+  text-align: center;
+}
+
+.login:hover {
+  background-color: #4cae4c !important;
+  border: 1px solid #4cae4c;
+  color: white !important;
+  text-align: center;
+}
+
+.logout {
+  background-color: #d9534f;
+  border: 1px solid #d43f3a;
+  color: white !important;
+  text-align: center;
+}
+
+.logout:hover {
+  background-color: #d43f3a !important;
+  border: 1px solid #d43f3a;
+  color: white !important;
+  text-align: center;
+}
