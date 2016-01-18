@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
         <li><%= link_to 'Articles', articles_path %></li>
         <li><%= link_to 'Users', users_path %></li>
+        <li><%= link_to 'Categories', categories_path %></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -26,20 +27,28 @@
       
       <!--Right Navbar-->
       <ul class="nav navbar-nav navbar-right">
+        
         <% if !logged_in? %>
           <li><%= link_to 'Sign Up', signup_path %></li>
           <li><%= link_to 'Login', login_path, class: "login" %></li>
+          
         <% else %>
+        
+          <!--Right Dropdown Menu-->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %><%= " | Admin" if current_user.admin? %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "New Article", new_article_path %></li>
+              <% if current_user.admin? %>
+                <li><%= link_to 'New Category', new_category_path %></li>
+              <% end %>
               <li><%= link_to 'My Profile', user_path(current_user) %></li>
               <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
               <li role="separator" class="divider"></li>
               <li><%= link_to 'Logout', logout_path, method: :delete, class: "logout" %></li>
             </ul>
           </li>
+          
         <% end %>
       </ul>
       
