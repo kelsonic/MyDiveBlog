@@ -12,7 +12,10 @@
           <strong>Dive Site(s): </strong><%= article.divesite %><br/>
           <strong>Created by: </strong><%= article.user.username if article.user %> 
             <%= time_ago_in_words(article.created_at) %> ago, last updated 
-            <%= time_ago_in_words(article.updated_at) %> ago
+            <%= time_ago_in_words(article.updated_at) %> ago<br/>
+          <% if article.categories.any? %>
+            <strong>Categories: </strong><%= render article.categories %>
+          <% end %>
         </div>
         
         <div class="article-body text-center">

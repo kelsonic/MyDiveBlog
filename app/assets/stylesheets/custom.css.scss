@@ -1,5 +1,13 @@
 $navbar-default-bg: #fff;
 
+.btn-primary {
+  background-color: #2800a0 !important; //Color1
+}
+
+.btn-success {
+  background-color: #00a028 !important; //Color2
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -16,19 +24,19 @@ body {
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #2800a0;
+  color: #2800a0; //Color1
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: #999;
+  color: #7800a0;
   text-decoration: none;
 }
 
 #logo_intext {
-  color: #2800a0;
+  color: #2800a0; //Color1
   font-weight: bold;
 }
 
@@ -41,7 +49,7 @@ body {
 }
 
 .jumbotron h1 {
-  color: #fff;
+  color: white;
   margin-top: 10px !important;
   margin-bottom: 100px;
   letter-spacing: -1px;
@@ -82,4 +90,21 @@ footer ul li {
 .well {
   border-bottom: 2px solid #999;
   border-right: 2px solid #777;
+}
+
+.badge {
+  background-color: #0078a0;
+}
+
+.badge:hover {
+  background-color: #2800a0; //Color1
+}
+
+.badge a {
+  color: white;
+  text-decoration: none;
+}
+
+.input_checkbox input {
+  width: auto !important;
 }

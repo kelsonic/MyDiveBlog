@@ -21,9 +21,16 @@
   <hr>
   
   <!--Dive Sites-->
-  <h4 class="show-article-h4"><strong>Dive Site(s):</strong></h4>
+  <h4 class="show-article-h4"><strong>Dive Site or Region:</strong></h4>
   <%= simple_format(@article.divesite) %>
   <hr>
+  
+  <!--Categories-->
+  <% if @article.categories.any? %>
+    <h4 class="show-article-h4"><strong>Categories:</strong></h4>
+    <%= render @article.categories %>
+    <hr>
+  <% end %>
   
   <!--Experience-->
   <h4 class="show-article-h4"><strong>Experience:</strong></h4>

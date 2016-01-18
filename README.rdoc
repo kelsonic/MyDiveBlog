@@ -2,3 +2,11 @@ This is Kelson's fourth Rails project!
 
 Welcome to MyDiveBlog!
 
+Colors for the website:
+
+// Triadic Color Scheme
+Color1: #2800a0 //dark purple, primary actions
+
+Color2: #00a028 //light green, success actions
+
+Color3: #a02800 //dark red, destroy actions
