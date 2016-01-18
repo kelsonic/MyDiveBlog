@@ -13,8 +13,9 @@
             <%= pluralize(category.articles.count, "article") %>
           </li>
           <% if logged_in? and current_user.admin? %>
+            <br/>
             <li>
-              <div class="text-left">
+              <div class="text-center">
                 <%= link_to "Edit this category", edit_category_path(category), class: "btn btn-xs btn-warning" %>
               </div>
             </li>
