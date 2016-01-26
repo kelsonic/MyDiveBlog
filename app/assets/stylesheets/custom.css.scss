@@ -19,6 +19,9 @@ body {
 .navbar {
   border-bottom: 1px solid #999;
 }
+nav.navbar.navbar-default {
+  margin-bottom: 0px;
+}
 
 // Logo
 #logo {
