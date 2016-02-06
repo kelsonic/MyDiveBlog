@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   
   has_many :articles, dependent: :destroy
+  has_many :conversations, foreign_key: :sender_id
   
   before_save { self.email = email.downcase }
   
