@@ -2,7 +2,7 @@
 
 <div class="text-center">
   <%= will_paginate %>
-  <% @users.each do |user| %>
+  <% @users.each_with_index do |user, index| %>
     <ul class="listing">
       <div class="row">
         <div class="well col-md-4 col-md-offset-4">
@@ -10,9 +10,17 @@
           <li><%= link_to gravatar_for(user), user_path(user) %></li>
           <li class="article-title"><%= link_to user.username, user_path(user) %></li>
           <li><small><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
-          <% if logged_in? and current_user.admin? %>
+          <% if logged_in? %>
+          
             <br/>
-            <li><%= link_to "Delete User", user_path(user), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure? This will delete the user and all their articles." } %></li>
+            
+            <%= link_to "Send Message", "#", class: "btn btn-success start-conversation",
+                              "data-sid" => current_user.id, "data-rip" => user.id %>
+            
+            <% if current_user.admin? %>
+              <%= link_to "Delete User", user_path(user), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure? This will delete the user and all their articles." } %>
+            <% end %>
+            
           <% end %>
           
         </div>
