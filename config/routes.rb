@@ -12,9 +12,12 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  # Articles, Users, Categories
+  # Articles, Users, Categories, Conversations, Messages
   resources :articles
   resources :users, except: [:new]
   resources :categories, except: [:destroy]
+  resources :conversations do
+    resources :messages
+  end
   
 end
