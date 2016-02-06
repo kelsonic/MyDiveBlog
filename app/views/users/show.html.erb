@@ -6,7 +6,13 @@
   </div>
 </div>
 
-<h2 class="col-md-4 col-md-offset-4 text-center well"><%= @user.username %>'s Articles</h2>
+<div class="col-md-4 col-md-offset-4 well text-center">
+  <h2><%= @user.username %>'s Articles</h2>
+  <% if logged_in? %>
+    <%= link_to "Send Message", "#", class: "btn btn-success start-conversation",
+                                "data-sid" => current_user.id, "data-rip" => @user.id %>
+  <% end %>
+</div>
 
 <div class="text-center">
   <%= will_paginate @user_articles %>
